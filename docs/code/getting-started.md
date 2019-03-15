@@ -964,14 +964,14 @@ For the simplest example, let's create a useless switch in your app, and save it
     var settings = new GLib.Settings ("com.github.yourusername.yourrepositoryname");
     ```
 
-3. For our switch example, we can simply [bind](https://valadoc.org/gio-2.0/GLib.Settings.bind.html) the switch's `active` state to the GSetting. Beneath your settings definition, let's add a switch and the binding:
+3. For our switch example, we can simply [bind](https://valadoc.org/gio-2.0/GLib.Settings.bind.html) the switch's [`active` property](https://valadoc.org/gtk+-3.0/Gtk.Switch.active.html) to the GSetting. Beneath your settings definition, let's add a switch and the binding:
 
     ```vala
     var useless_switch = new Gtk.Switch ();
     settings.bind ("useless-setting", useless_switch, "active", GLib.SettingsBindFlags.DEFAULT);
     ```
 
-    You can read more about [`GLib.Settings.bind ()` on Valadoc](https://valadoc.org/gio-2.0/GLib.Settings.bind.html), but for now this will bind the `active` state of the switch to the value of `useless-setting` in GSettings. When one changes, the other will stay in sync to reflect it.
+    You can read more about [`GLib.Settings.bind ()` on Valadoc](https://valadoc.org/gio-2.0/GLib.Settings.bind.html), but for now this will bind the `active` property of the switch to the value of `useless-setting` in GSettings. When one changes, the other will stay in sync to reflect it.
 
 4. Be sure to attach your switch to your layout so it shows up.
 
